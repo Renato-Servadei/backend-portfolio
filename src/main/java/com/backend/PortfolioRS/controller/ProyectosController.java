@@ -6,6 +6,9 @@ import com.backend.PortfolioRS.model.Proyectos;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 public class ProyectosController {
     
     List<Proyectos> listaProyectos = new ArrayList();
@@ -47,21 +51,9 @@ public class ProyectosController {
     }
     
     @PutMapping("/proyectos/editar/{idPro}")
-    public Proyectos editarProyectos(@PathVariable Long idPro,
-                                                @RequestParam("nombrePro") String nuevoNombre,
-                                                @RequestParam("descPro") String nuevaDesc,
-                                                @RequestParam("imgPro") String nuevaImg,
-                                                @RequestParam("codPro") String nuevoCod,
-                                                @RequestParam("pagPro") String nuevaPag) {
-        Proyectos pro = proServ.buscarProyectos(idPro);
-        pro.setNombrePro(nuevoNombre);
-        pro.setDescPro(nuevaDesc);
-        pro.setImgPro(nuevaImg);
-        pro.setCodPro(nuevoCod);
-        pro.setPagPro(nuevaPag);
-        
-        proServ.crearProyectos(pro);
-        return pro;
+    public ResponseEntity <Proyectos> editarProyectos(@RequestBody Proyectos pro) {
+        Proyectos editarProyectos = proServ.editarProyectos(pro);
+        return new ResponseEntity<>(editarProyectos, HttpStatus.OK);
 }
     
 }

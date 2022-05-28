@@ -6,6 +6,9 @@ import com.backend.PortfolioRS.model.Duras;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 public class DurasController {
     
     List<Duras> listaDuras = new ArrayList();
@@ -46,16 +50,10 @@ public class DurasController {
         durasServ.borrarDuras(idDuras);
     }
     
-    @PutMapping("/duras/editar/{idDuras}")
-    public Duras editarDuras(@PathVariable Long idDuras,
-                                                @RequestParam("nombreDuras") String nuevoNombre,
-                                                @RequestParam("iconoDuras") String nuevoIcono) {
-        Duras duras = durasServ.buscarDuras(idDuras);
-        duras.setNombreDuras(nuevoNombre);
-        duras.setIconoDuras(nuevoIcono);
-        
-        durasServ.crearDuras(duras);
-        return duras;
+    @PutMapping("/duras/editar")
+    public ResponseEntity <Duras> editarDuras(@RequestBody Duras duras) {
+        Duras editarDuras = durasServ.editarDuras(duras);
+        return new ResponseEntity<>(editarDuras, HttpStatus.OK);
 }
     
 }

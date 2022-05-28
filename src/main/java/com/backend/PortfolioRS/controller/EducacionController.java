@@ -6,6 +6,9 @@ import com.backend.PortfolioRS.model.Educacion;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
+
+
 
 public class EducacionController {
     
@@ -47,18 +53,10 @@ public class EducacionController {
         eduServ.borrarEducacion(idEdu);
     }
     
-    @PutMapping("/educacion/editar/{idEdu}")
-    public Educacion editarEducacion(@PathVariable Long idEdu,
-                                                @RequestParam("periodoEdu") String nuevoPeriodo,
-                                                @RequestParam("tituloEdu") String nuevoTitulo,
-                                                @RequestParam("institucionEdu") String nuevaInstitucion) {
-        Educacion edu = eduServ.buscarEducacion(idEdu);
-        edu.setPeriodoEdu(nuevoPeriodo);
-        edu.setTituloEdu(nuevoTitulo);
-        edu.setInstitucionEdu(nuevaInstitucion);
-        
-        eduServ.crearEducacion(edu);
-        return edu;
+    @PutMapping("/educacion/editar")
+    public ResponseEntity <Educacion> editarEducacion(@RequestBody Educacion edu) {
+        Educacion editarEducacion = eduServ.editarEducacion(edu);
+        return new ResponseEntity<>(editarEducacion, HttpStatus.OK);
 }
     
 }
