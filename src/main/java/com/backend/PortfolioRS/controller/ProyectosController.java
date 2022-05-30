@@ -50,10 +50,10 @@ public class ProyectosController {
         proServ.borrarProyectos(idPro);
     }
     
-    @PutMapping("/proyectos/editar/{idPro}")
+    @PutMapping("/proyectos/editar")
     public ResponseEntity <Proyectos> editarProyectos(@RequestBody Proyectos pro) {
         Proyectos editarProyectos = proServ.editarProyectos(pro);
-        return new ResponseEntity<>(editarProyectos, HttpStatus.OK);
+        return new ResponseEntity <> (editarProyectos, HttpStatus.OK);
 }
     
 }

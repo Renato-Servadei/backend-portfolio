@@ -17,6 +17,7 @@ public class Persona {
     private String nombrePer;
     private String ciudadPer;
     private String descPer;
+    private String imgPer;
 
     public Persona() {
     }

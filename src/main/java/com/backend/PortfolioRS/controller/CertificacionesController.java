@@ -50,7 +50,7 @@ public class CertificacionesController {
         certServ.borrarCertificacion(idCer);
     }
     
-    @PutMapping("/editar/certificaciones/editar")
+    @PutMapping("/certificaciones/editar")
     public ResponseEntity <Certificaciones> editarCertificacion(@RequestBody Certificaciones cert) {
         Certificaciones editarCertificacion = certServ.editarCertificacion(cert);
         return new ResponseEntity <> (editarCertificacion, HttpStatus.OK);

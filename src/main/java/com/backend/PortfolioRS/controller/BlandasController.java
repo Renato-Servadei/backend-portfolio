@@ -51,7 +51,7 @@ public class BlandasController {
         blandasServ.borrarBlandas(idBlandas);
     }
     
-    @PutMapping("/blandas/editar/")
+    @PutMapping("/blandas/editar")
     public ResponseEntity<Blandas> editarBlandas(@RequestBody Blandas blandas) {
         Blandas editarBlandas = blandasServ.editarBlandas(blandas);
         return new ResponseEntity<>(editarBlandas, HttpStatus.OK);
