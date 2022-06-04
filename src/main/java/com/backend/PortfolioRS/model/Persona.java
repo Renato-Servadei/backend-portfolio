@@ -11,7 +11,7 @@ import lombok.Setter;
 @Entity
 public class Persona {
     
-@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idPer;
     private String nombrePer;
