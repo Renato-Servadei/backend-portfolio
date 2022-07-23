@@ -2,10 +2,11 @@ package com.backend.PortfolioRS.controller;
 
 
 import com.backend.PortfolioRS.interfaces.IExperiencia;
-import com.backend.PortfolioRS.model.Experiencia;
+import com.backend.PortfolioRS.entity.Experiencia;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+//@CrossOrigin(origins="https://rsportfolio-front-a45ea.web.app")
 @CrossOrigin(origins="http://localhost:4200")
 
 public class ExperienciaController {
@@ -27,6 +29,7 @@ public class ExperienciaController {
     @Autowired
     private IExperiencia expServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/experiencia/crear")
     public void crearExperiencia(@RequestBody Experiencia exp) {
         expServ.crearExperiencia(exp);
@@ -44,11 +47,13 @@ public class ExperienciaController {
         return expServ.buscarExperiencia(idExp);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/experiencia/borrar/{idExp}")
     public void borrarExperiencia(@PathVariable Long idExp) {
         expServ.borrarExperiencia(idExp);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/experiencia/editar/{idExp}")
     public Experiencia editarExperiencia(@PathVariable Long idExp,
                                                 @RequestParam("periodoExp") String nuevoPeriodo,

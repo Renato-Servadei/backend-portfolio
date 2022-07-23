@@ -1,6 +1,6 @@
 package com.backend.PortfolioRS.interfaces;
 
-import com.backend.PortfolioRS.model.Duras;
+import com.backend.PortfolioRS.entity.Duras;
 import java.util.List;
 
 public interface IDuras {

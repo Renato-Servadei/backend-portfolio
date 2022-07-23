@@ -1,6 +1,6 @@
 package com.backend.PortfolioRS.interfaces;
 
-import com.backend.PortfolioRS.model.Educacion;
+import com.backend.PortfolioRS.entity.Educacion;
 import java.util.List;
 
 

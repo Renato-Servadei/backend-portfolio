@@ -1,7 +1,7 @@
 package com.backend.PortfolioRS.service;
 
 import com.backend.PortfolioRS.interfaces.IBlandas;
-import com.backend.PortfolioRS.model.Blandas;
+import com.backend.PortfolioRS.entity.Blandas;
 import com.backend.PortfolioRS.repository.BlandasRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

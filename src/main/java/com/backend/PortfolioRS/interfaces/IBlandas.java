@@ -1,6 +1,6 @@
 package com.backend.PortfolioRS.interfaces;
 
-import com.backend.PortfolioRS.model.Blandas;
+import com.backend.PortfolioRS.entity.Blandas;
 import java.util.List;
 
 public interface IBlandas {

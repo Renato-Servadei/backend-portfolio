@@ -1,6 +1,6 @@
 package com.backend.PortfolioRS.interfaces;
 
-import com.backend.PortfolioRS.model.Persona;
+import com.backend.PortfolioRS.entity.Persona;
 import java.util.List;
 
 

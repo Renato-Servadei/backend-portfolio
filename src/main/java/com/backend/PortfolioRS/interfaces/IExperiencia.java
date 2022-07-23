@@ -1,7 +1,7 @@
 package com.backend.PortfolioRS.interfaces;
 
 
-import com.backend.PortfolioRS.model.Experiencia;
+import com.backend.PortfolioRS.entity.Experiencia;
 import java.util.List;
 
 public interface IExperiencia {

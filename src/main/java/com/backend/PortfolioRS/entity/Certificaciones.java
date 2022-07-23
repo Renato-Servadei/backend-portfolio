@@ -1,4 +1,4 @@
-package com.backend.PortfolioRS.model;
+package com.backend.PortfolioRS.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

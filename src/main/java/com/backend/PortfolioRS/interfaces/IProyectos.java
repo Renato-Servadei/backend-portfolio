@@ -1,6 +1,6 @@
 package com.backend.PortfolioRS.interfaces;
 
-import com.backend.PortfolioRS.model.Proyectos;
+import com.backend.PortfolioRS.entity.Proyectos;
 import java.util.List;
 
 

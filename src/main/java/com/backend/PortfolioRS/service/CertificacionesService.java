@@ -1,7 +1,7 @@
 package com.backend.PortfolioRS.service;
 
 import com.backend.PortfolioRS.interfaces.ICertificaciones;
-import com.backend.PortfolioRS.model.Certificaciones;
+import com.backend.PortfolioRS.entity.Certificaciones;
 import com.backend.PortfolioRS.repository.CertificacionesRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

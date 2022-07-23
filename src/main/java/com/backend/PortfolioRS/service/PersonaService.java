@@ -1,7 +1,7 @@
 package com.backend.PortfolioRS.service;
 
 import com.backend.PortfolioRS.interfaces.IPersona;
-import com.backend.PortfolioRS.model.Persona;
+import com.backend.PortfolioRS.entity.Persona;
 import com.backend.PortfolioRS.repository.PersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

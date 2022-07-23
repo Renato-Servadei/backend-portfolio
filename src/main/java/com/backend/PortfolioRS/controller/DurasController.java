@@ -2,12 +2,13 @@ package com.backend.PortfolioRS.controller;
 
 
 import com.backend.PortfolioRS.interfaces.IDuras;
-import com.backend.PortfolioRS.model.Duras;
+import com.backend.PortfolioRS.entity.Duras;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+//@CrossOrigin(origins="https://rsportfolio-front-a45ea.web.app")
 @CrossOrigin(origins="http://localhost:4200")
 public class DurasController {
     
@@ -28,6 +30,7 @@ public class DurasController {
     @Autowired
     private IDuras durasServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/duras/crear")
     public void crearDuras(@RequestBody Duras duras) {
         durasServ.crearDuras(duras);
@@ -45,11 +48,13 @@ public class DurasController {
         return durasServ.buscarDuras(idDuras);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/duras/borrar/{idDuras}")
     public void borrarDuras(@PathVariable Long idDuras) {
         durasServ.borrarDuras(idDuras);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/duras/editar")
     public ResponseEntity <Duras> editarDuras(@RequestBody Duras duras) {
         Duras editarDuras = durasServ.editarDuras(duras);

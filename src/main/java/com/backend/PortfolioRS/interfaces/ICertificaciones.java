@@ -1,6 +1,6 @@
 package com.backend.PortfolioRS.interfaces;
 
-import com.backend.PortfolioRS.model.Certificaciones;
+import com.backend.PortfolioRS.entity.Certificaciones;
 import java.util.List;
 
 

@@ -1,7 +1,7 @@
 package com.backend.PortfolioRS.service;
 
 import com.backend.PortfolioRS.interfaces.IEducacion;
-import com.backend.PortfolioRS.model.Educacion;
+import com.backend.PortfolioRS.entity.Educacion;
 import com.backend.PortfolioRS.repository.EducacionRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

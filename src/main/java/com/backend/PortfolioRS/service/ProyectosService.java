@@ -1,7 +1,7 @@
 package com.backend.PortfolioRS.service;
 
 import com.backend.PortfolioRS.interfaces.IProyectos;
-import com.backend.PortfolioRS.model.Proyectos;
+import com.backend.PortfolioRS.entity.Proyectos;
 import com.backend.PortfolioRS.repository.ProyectosRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

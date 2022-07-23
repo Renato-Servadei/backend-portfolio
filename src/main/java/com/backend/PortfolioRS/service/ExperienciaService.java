@@ -1,7 +1,7 @@
 package com.backend.PortfolioRS.service;
 
 import com.backend.PortfolioRS.interfaces.IExperiencia;
-import com.backend.PortfolioRS.model.Experiencia;
+import com.backend.PortfolioRS.entity.Experiencia;
 import com.backend.PortfolioRS.repository.ExperienciaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@
 package com.backend.PortfolioRS.service;
 
 import com.backend.PortfolioRS.interfaces.IDuras;
-import com.backend.PortfolioRS.model.Duras;
+import com.backend.PortfolioRS.entity.Duras;
 import com.backend.PortfolioRS.repository.DurasRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
