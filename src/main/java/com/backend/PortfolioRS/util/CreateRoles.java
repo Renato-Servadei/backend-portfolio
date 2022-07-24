@@ -15,8 +15,8 @@
 //    
 //    @Override
 //    public void run(String... args) throws Exception {
-//     Rol rolAdmin = new Rol(RolNombre.ROL_ADMIN);
-//     Rol rolUser = new Rol(RolNombre.ROL_USER);
+//     Rol rolAdmin = new Rol(RolNombre.ROLE_ADMIN);
+//     Rol rolUser = new Rol(RolNombre.ROLE_USER);
 //     rolService.save(rolAdmin);
 //     rolService.save(rolUser);
 //    }
